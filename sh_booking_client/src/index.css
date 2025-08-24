@@ -1,11 +1,11 @@
-@import "tailwindcss";
-
-@plugin "daisyui" {
-  @config {
-    themes: [
-      "cupcake",
-      "dark:dracula",
-    ],
-  }
+*{
+  font-family: "Lora", serif;
 }
 
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: {
+    night:"night",
+    fantasy: "fantasy"
+  }
+}
