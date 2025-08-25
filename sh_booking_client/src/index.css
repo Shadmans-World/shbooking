@@ -2,10 +2,14 @@
   font-family: "Lora", serif;
 }
 
+
+
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: {
-    night:"night",
-    fantasy: "fantasy"
-  }
-}
+  themes: 
+    night,
+    fantasy --default
+  
+};
+
+
