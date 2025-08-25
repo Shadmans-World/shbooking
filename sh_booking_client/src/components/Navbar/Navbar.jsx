@@ -1,21 +1,19 @@
 import React, { useState, useEffect } from "react"
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 
 export default function Navbar() {
-
+  const navigate = useNavigate();
   const link = <>
      <li>
-            <NavLink to="#">Academy</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="#">Club</NavLink>
+            <NavLink to="#">Hotels</NavLink>
           </li>
           <li>
-            <NavLink to="#">Membership</NavLink>
+            <NavLink to="#">Bookings</NavLink>
           </li>
-          <li>
-            <NavLink to="#">Tournament</NavLink>
-          </li>
+          
   </>
   // Load theme from localStorage OR default to "fantasy"
   const [theme, setTheme] = useState(
@@ -28,7 +26,14 @@ export default function Navbar() {
     localStorage.setItem("theme", theme)
   }, [theme])
 
-  
+  const hanldeLogin = () =>{
+    
+    navigate('/login')
+  }
+
+  const handleRegister = () =>{
+    navigate('/register')
+  }
 
   return (
     <div className="h-16 border-b-2 rounded-xl flex items-center justify-between font-bold p-2">
@@ -73,8 +78,8 @@ export default function Navbar() {
       {/* Right: Actions */}
       <div className="flex-1 text-right">
         <div className="flex justify-end items-center lg:gap-3 gap-1 md:gap-2">
-          <button className="btn btn-soft btn-primary">Login</button>
-          <button className="btn btn-soft btn-primary">Register</button>
+          <button onClick={hanldeLogin} className="btn btn-soft btn-primary">Login</button>
+          <button onClick={handleRegister} className="btn btn-soft btn-primary">Register</button>
 
           {/* Theme Toggle */}
           <label className="toggle cursor-pointer">

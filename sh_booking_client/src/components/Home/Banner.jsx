@@ -4,7 +4,7 @@ export default function Banner() {
   return (
     <div className="rounded-xl overflow-hidden">
       <div
-      className="hero min-h-[calc(100vh-72px)]"
+      className="hero h-[400px]"
       style={{
         backgroundImage:
           "url(https://i.ibb.co.com/Q7XCJDmn/hotel-banner-1.jpg)",
